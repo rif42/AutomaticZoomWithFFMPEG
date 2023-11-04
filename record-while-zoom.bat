@@ -1,0 +1,2 @@
+@echo off
+ffmpeg -f gdigrab -framerate 30 -i desktop -f dshow -i audio="virtual-audio-capturer" -vf "zoompan=z='if(lte(mod(time,7),4),7,1)':d=1:x=iw/2-(iw/zoom/2):y=ih/2-(ih/zoom/2):d=1" -t 20 output.mp4
